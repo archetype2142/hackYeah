@@ -1,6 +1,6 @@
-<%= form_for current_user.sub_categories.first, url: sub_categories_path, html: { method: :post} do |f| %>
+<%= form_for SubCategory.new, url: sub_categories_path, html: { method: :post} do |f| %>
 	<% @sub_categories.each do |sub_category| %>
-			<%= f.check_box sub_category %> 
+			<%= f.check_box "#{sub_category}" %> 
 			<%= f.label sub_category %>
 	<% end %>
 
