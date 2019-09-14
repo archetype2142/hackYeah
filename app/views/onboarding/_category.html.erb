@@ -1,0 +1,9 @@
+<%= form_for current_user, url: onboarding_index_path, html: { method: :post} do |f| %>
+	<% Category::CATEGORIES.each do |category| %>
+			<%= f.check_box category %> 
+			<%= f.label category %>
+	<% end %>
+
+	<%= f.submit %>
+<% end %>
+
