@@ -4,11 +4,15 @@ class OnboardingController < ApplicationController
 	def index; end
 	
 	def create
-		keep = permitted_params.select { |name, ans| ans == "1" }.keys
-		remove = Category::CATEGORIES - keep
+		keep = params['user'].select { |name, ans| ans == "1" }.keys
+		remove = Category::CATEGORIES.keys - keep
 		
 		keep.each do |category|
-			Category.create!(name: category, user: current_user)
+			Category.create!(
+				name: category, 
+				user: current_user,
+				image_url: Category::CATEGORIES[category.to_s]
+			)
 		end
 
 		redirect_to sub_categories_path
@@ -18,7 +22,7 @@ class OnboardingController < ApplicationController
 	
 	def permitted_params
     params.require(:user).permit(
-      Category::CATEGORIES
+      Category::CATEGORIES.map(&:to_s)
     )
   end
 end

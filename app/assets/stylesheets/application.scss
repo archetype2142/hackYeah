@@ -1,1 +1,39 @@
 @import "bootstrap";
+.card {
+    display:block;
+    text-align:center;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input:checked + label {
+ 	color: black;
+}
+
+input:checked + label:before {
+    content: " 🔥 ";
+}
+
+input:checked + label:after {
+    content: " 🔥 ";
+}
+div.card + input:checked {
+	background-color: green;
+}
+
+
+/* new stuff */
+.check {
+    visibility: hidden;
+}
+
+input:checked + label .check {
+    visibility: visible;
+
+}
+
+body{
+	margin-bottom: 60px;
+}

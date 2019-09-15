@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :categories
   has_many :sub_categories
-
+  has_many :posts
+  has_and_belongs_to_many :places
+  
   def adventure
   	return if categories.nil?
   	true if categories.where(name: 'adventure').any?

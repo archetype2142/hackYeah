@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   namespace :api do
     resources :user, only: [:show]
     resources :categories, only: [:show]
+    resources :places, only: [:show]
   end
 end
