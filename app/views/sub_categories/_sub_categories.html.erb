@@ -5,11 +5,8 @@
 		<% @sub_categories.each do |sub_category| %>
 		<label>
 			<div class="card">
-					<h5 style="color: gray;" class="card-title" style="margin-left: 20%">	<%= f.check_box "#{sub_category}" %>  <%= f.label sub_category %></h5>
+					<h5 style="color: gray;" class="card-title" style="margin-left: 20%;">	<%= f.check_box "#{sub_category}" %>  <%= f.label sub_category %></h5>
 						<%= image_tag "cat/#{sub_category}.jpg", class: 'card-img-top'%>
-				    <div class="card-body">
-				      
-				    </div>
 				  </div>
 			</label>
 		<% end %>

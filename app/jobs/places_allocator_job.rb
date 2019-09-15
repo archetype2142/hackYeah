@@ -13,10 +13,9 @@ class PlacesAllocatorJob < ApplicationJob
   				url = "https://pixabay.com/api/?key=#{api_key}&q=#{place.name}&image_type=photo&category=travel";
   				response = open(url).read
   				response = JSON.parse(response)
-  				# puts "YOOO #{response}" 
   				if response['totalHits'] != 0
   					puts response['hits'][1]
-						place.update!(image_url: response['hits'][1]['webformatURL'].to_str) 
+						place.update!(image_url: response['hits'][0]['webformatURL'].to_str) 
 					end
 
   				user.places << place
