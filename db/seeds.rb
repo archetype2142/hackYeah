@@ -604,12 +604,6 @@ places = [
     cat_type: 'solo'
 	},
 	{
-    name: 'Trondheim',
-    country: 'Norway',
-    airport: 'TRD',
-    cat_type: 'trekking'
-	},
-	{
     name: 'Zurich',
     country: 'Switzerland',
     airport: 'ZHR',
