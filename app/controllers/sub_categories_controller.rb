@@ -21,7 +21,7 @@ class SubCategoriesController < ApplicationController
 			)
 		end
 		PlacesAllocatorJob.new(current_user).perform_now
-		redirect_to sub_categories_path
+    redirect_to "https://lot-of-dreams.herokuapp.com/?userId=#{current_user.id}&accessToken=#{current_user.access_token}"
   end
 
   def permitted_params
