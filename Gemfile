@@ -22,6 +22,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'pg'
 gem 'mechanize'
+gem 'rack-cors'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
